@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The_Preety_Bakes</title>
+    <!-- Icon -->
+    <link rel="icon" href="logo.jpg" type="image/png">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- AOS.css -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+
+    <style>
+      .hover-card-container {
+  position: relative;
+  display: inline-block;
+}
+  .hover-card-container p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+  }
+.hover-card-container img {
+  display: block;
+  border-radius: 8px;
+}
+
+/* The Card Initially Hidden */
+.info-card {
+  position: absolute;
+  bottom:0%;
+  width: 14.59rem;
+  /* left: 15%; */
+  /* right: 10%; */
+  background-color: #EEAECA;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1;
+}
+
+.info-card p{
+  margin-bottom: 0;
+}
+
+/* Show card on hover */
+.hover-card-container:hover .info-card {
+  opacity: 1;
+  transform: translateY(0px);
+}
+    
+     /*body {
+      margin: 0;
+      height: 100vh;
+      background: #EEAECA;
+      background: linear-gradient(158deg, #898AC4 8%, #C0C9EE 83%);
+    }*/
+    .parallax-form-section {
+    background-image: url(jacob-schwartz-enVg_Vtsw1c-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 20px;
+    min-height: 100vh;
+    position: relative;
+    }
+    .card-header{
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: large;
+    }
+    .card{
+      transition: box-shadow 0.4s ease, transform 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.570);
+      transform: translateY(-8px);
+    }
+
+    .navbar-center-title {
+      /* position: absolute; */
+      /* left: 30%; */
+      /* transform: translateX(-50%); */
+      font-family: 'Dancing Script', cursive;
+      font-style: italic;
+      font-size: 1.8rem;
+    }
+    .headings{
+      font-family: 'Dancing Script', cursive;
+      font-style: italic;
+      font-size: 2.0rem;
+    }
+    .search-input {
+      width: 200px;
+    }
+
+    /* Image Hover Css */
+    .hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+
+.hovereffect:hover img {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.7" /><feFuncG type="linear" slope="0.7" /><feFuncB type="linear" slope="0.7" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.7);
+  -webkit-filter: brightness(0.7);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  padding: 10px;
+  width: 100%;
+}
+
+.hovereffect:hover h2 {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: translate3d(-50%,-50%,0) scale3d(0.8,0.8,1);
+  transform: translate3d(-50%,-50%,0) scale3d(0.8,0.8,1);
+}
+
+.hovereffect a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  margin: 50px 0 0 0;
+  background-color: transparent;
+}
+
+.hovereffect a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect .rotate {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hovereffect hr {
+  width: 50%;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.hovereffect  hr:nth-child(2) {
+  -webkit-transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(0,0,1);
+  transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(0,0,1);
+}
+
+.hovereffect  hr:nth-child(3) {
+  -webkit-transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(0,0,1);
+  transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(0,0,1);
+}
+
+.hovereffect h2, .hovereffect hr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+  -webkit-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+  transform-origin: 50%;
+  background-color: transparent;
+  margin: 0px;
+  color: white;
+}
+
+.group1, .group2 {
+  left: 50%;
+  position: absolute;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+  -webkit-transform-origin: 50%;
+  -ms-transform-origin: 50%;
+  transform-origin: 50%;
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+}
+
+.group1 {
+  top: 45%;
+  width: 500px;
+}
+
+.group2 {
+  top: 54%;
+  width: 500px;
+}
+
+.hovereffect p {
+  width: 100%;
+  text-transform: none;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.hovereffect p a {
+  color: #fff;
+}
+
+.hovereffect p a:hover,
+.hovereffect p a:focus {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+.hovereffect  a i {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.group1 a:first-child i {
+  -webkit-transform: translate3d(-60px,-60px,0) rotate(45deg) scale(2);
+  transform: translate3d(-60px,-60px,0) rotate(45deg) scale(2);
+}
+
+.group1 a:nth-child(2) i {
+  -webkit-transform: translate3d(60px,-60px,0) rotate(45deg) scale(2);
+  transform: translate3d(60px,-60px,0)  rotate(45deg) scale(2);
+}
+
+.group2 a:first-child i {
+  -webkit-transform: translate3d(-60px,60px,0) rotate(45deg) scale(2);
+  transform: translate3d(-60px,60px,0) rotate(45deg) scale(2);
+}
+
+.group2 a:nth-child(2) i {
+  -webkit-transform: translate3d(60px,60px,0)  rotate(45deg) scale(2);
+  transform: translate3d(60px,60px,0)  rotate(45deg) scale(2);
+}
+
+.hovereffect:hover hr:nth-child(2) {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(1,1,1);
+  transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(1,1,1);
+}
+
+.hovereffect:hover hr:nth-child(3) {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(1,1,1);
+  transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(1,1,1);
+}
+
+.hovereffect:hover .group1 i:empty, .hovereffect:hover .group2 i:empty {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0) rotate(45deg) scale(1);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+    </style>
+</head>
+<body>
+    <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg">
+  <div class="container-fluid" style="background-color: #a2cffd;">
+
+    <!-- Left: Logo -->
+    <a class="navbar-brand animate__animated animate__fadeInDown" href="#">
+      <img src="logo.jpg" alt="logo" style="width: 70px; border-radius: 100%;">
+    </a>
+
+    <!-- Center: Title -->
+    <div class="navbar-center-title animate__animated animate__fadeInDown">The Preety Bakes</div>
+    
+
+    <!-- Mobile Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Right Section -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarScroll">
+      <ul class="navbar-nav mb-2 mb-lg-0 me-3 animate__animated animate__fadeInDown">
+        <li class="nav-item">
+          <a class="nav-link active" href="#order-form" target="_self" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Order-Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#About-us" target="_parent" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-us" target="_top" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Search Bar (short width) -->
+      <form class="d-flex me-3 animate__animated animate__fadeInDown" role="search">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn rounded btn-outline-light" type="submit" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Search</button>
+      </form>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Carousel -->
+ <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active " data-bs-interval="2000">
+      <img src="car2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <a href="#order-form" target="_self">
+      <img src="car1.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="car3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Cards -->
+<hr class="my-4">
+<div class="container-fluid" style="background-color: #a2cffd;"><br>
+  <div class="headings animate__animated text-center" data-aos="fade-down">Signature Offering</div><br>
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-end">
+      <div class="card rounded-lg" style="width: 18rem; background-color: #FEEBF6;">
+                <div class="card-header">Cake</div>
+                <!-- image -->
+                <img src="so1.jpg" alt="card1" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text text-center">Price-Range : 300-450 Rs</p>
+                    <div class="text-center"><a href="https://youtube.com/shorts/tJKf3K2HIC0?si=XnH43YS01hTqzaro" class="btn btn-light w-100" target="_blank" style="border: solid black 1px; background-color: #b6d8fa;">View</a></div>
+                </div>
+            </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card"  style="width: 18rem; background-color: #FEEBF6;">
+                <div class="card-header">Bento Cake</div>
+                <!-- image -->
+                <img src="so2.jpg" alt="card2" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text text-center">Price-Range : 250-350 Rs</p>
+                    <div class="text-center"><a href="https://youtube.com/shorts/2KAUoxzRJus?si=sdjSN713lPRS0vSf" class="btn btn-light w-100" target="_blank" style="border: solid black 1px; background-color: #b6d8fa;">View</a></div>
+                </div>
+            </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-left">
+      <div class="card" style="width: 18rem; background-color: #FEEBF6;">
+                <div class="card-header">Cupcake</div>
+                <!-- image -->
+                <img src="so3.jpg" alt="card3" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text text-center">Price-Range : 30-40 Rs</p>
+                    <div class="text-center"><a href="https://youtube.com/shorts/Oecyfgf3WzQ?si=aOuGqZcrSqGZnuer" class="btn btn-light w-100" target="_blank" style="border: solid black 1px; background-color: #b6d8fa;">View</a></div>
+                </div>
+            </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-end">
+      <div class="card" style="width: 18rem; background-color: #FEEBF6;">
+                <div class="card-header">Pastery</div>
+                <!-- image -->
+                <img src="so4.jpg" alt="card4" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text text-center">Price-Range : 40-80 Rs</p>
+                    <div class="text-center"><a href="https://youtube.com/shorts/RANQK0zMsWU?si=CAWZGIHTrUj8SmVP" class="btn btn-light w-100" target="_blank" style="border: solid black 1px; background-color: #b6d8fa;">View</a></div>
+                </div>
+            </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <div class="card"  style="width: 18rem; background-color: #FEEBF6;">
+                <div class="card-header">Dessert</div>
+                <!-- image -->
+                <img src="so5.jpg" alt="card5" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text text-center">Price-Range : Starts from 50 Rs</p>
+                    <div class="text-center"><a href="https://youtube.com/shorts/b3ZP0-CNdE8?si=BgLjgFeApDr5oTXc" class="btn btn-light w-100" target="_blank" style="border: solid black 1px; background-color: #b6d8fa;">View</a></div>
+                </div>
+            </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-left">
+      <div class="card" style="width: 18rem; background-color: #FEEBF6;">
+                <div class="card-header">Brownie</div>
+                <!-- image -->
+                <img src="so6.jpg" alt="card6" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text text-center">Price-Range : 50-90 Rs</p>
+                    <div class="text-center"><a href="https://www.instagram.com/p/DAyMfGHCrV6/?igsh=bWswenI0d3RxanFx" class="btn btn-light w-100" target="_blank" style="border: solid black 1px; background-color: #b6d8fa;">View</a></div>
+                </div>
+            </div>
+    </div>
+  </div><br>
+</div>
+
+<!-- Owl Carousel -->
+<hr class="my-4">
+<div class="headings animate__animated text-center" data-aos="fade-down">Our Recent Orders</div><br><br>
+<div class="owl-carousel second-carousel container-fluid">
+  <div class="hover-card-container">
+    <img src="o0.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Ribbon-Cake</p>
+    </div>
+  </div>       
+  <div class="hover-card-container">
+    <img src="o1.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Sunflower-cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o2.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>2-Tier Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o3.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Blueberry Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o4.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Pineapple Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o5.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Purple Delight Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o6.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Chocolate Ganache Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o7.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Vanilla Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o8.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Truffle Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o9.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Pista Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o10.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Janmashti Special Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o11.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Rede Velvet Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o12.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Butterscoth Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o13.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Customize Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o14.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Bento Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o15.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Top-Forward Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o16.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Anniversary Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o17.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Butterfly Dream Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o18.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Chocolate Cake</p>
+    </div>
+  </div>
+  <div class="hover-card-container">
+    <img src="o19.jpg" style="width: 80%;">
+    <div class="info-card">
+      <p>Strawberry Cake</p>
+    </div>
+  </div>
+</div>
+
+<!-- Parallax With Form-->
+ <section class="parallax-form-section d-flex align-items-center justify-content-center text-white" id="order-form" loading="lazy">
+  <div class="container p-5 rounded shadow bg-dark bg-opacity-75">
+  <div class="headings animate__animated text-center" data-aos="fade-down">Place Your Order</div><br>
+    <form class="needs-validation was-validated" novalidate="">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="validCustom01" class="form-label">Your Name</label>
+          <input type="text" id="validCustom01" name="name" class="form-control" placeholder="Enter your name" required="">
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validCustom02" class="form-label">Email</label>
+          <input type="email" id="validCustom02" name="email" class="form-control" placeholder="Enter your email" required="">
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="validCustom03" class="form-label">Phone Number</label>
+          <input type="tel" id="validCustom03" name="phone" class="form-control" placeholder="Enter your phone number" required="">
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <label for="validCustom04" class="form-label">Flavour</label>
+          <input type="text" id="validCustom04" name="flavour" class="form-control" placeholder="Enter desired flavour"  required="">
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+      </div>
+
+      <div class="row-mb-3">
+        <div class="col-md-6">
+          <label for="validCustom05" class="form-label">Cake Type</label>
+          <select class="form-select" id="validCustom05" name="cake_type" required="">
+            <option selected="" disabled="">Choose a cake</option>
+            <option>Icing Cake</option>
+            <option>Mawa Cake</option>
+            <option>Cup Cake</option>
+            <option>Bento Cake</option>
+            <option>Pastery</option>
+            <option>Brownie</option>
+            <option>Dessert</option>
+
+          </select>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="validCustom06" class="form-label">Weight</label>
+          <select class="form-select" id="validCustom06" name="cake_type" required="">
+            <option selected="" disabled="">Choose weight</option>
+            <option>Regular</option>
+            <option>1 Pound</option>
+            <option>2 Pound</option>
+            <option>1/2 Pound</option>
+            
+          </select>
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+      </div>
+
+    
+        <div class="row">
+        <div class="col-12 col-md-6">
+        <label for="validCustom07" class="form-label">Customization</label>
+        <textarea class="form-control" id="validCustom07" name="instructions" rows="4" placeholder="E.g. message on cake, additional items, etc."></textarea>
+        <div class="valid-feedback">Looks good!</div>
+        </div>
+        </div>
+
+      <!-- Radio button  -->
+      <div class="form-check">
+  <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" onclick="toggleAddress(false)" required>
+  <label class="form-check-label" for="validationFormCheck2">Order taken from store</label>
+</div>
+
+<div class="form-check mb-3">
+  <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" onclick="toggleAddress(true)" required>
+  <label class="form-check-label" for="validationFormCheck3">Home-Delivery</label>
+  <div class="invalid-feedback">Choose Delivery Option</div>
+</div>
+
+    <div class="col-12 col-md-6" id="addressField" style="display: none;">
+  <label for="validCustom08" class="form-label">Delivery address</label>
+  <textarea class="form-control" id="validCustom08" name="instructions" rows="4" placeholder="Enter your address.."></textarea>
+  <div class="valid-feedback">Looks good!</div>
+</div>
+
+  <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="invalidCheck" required="">
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-success btn-lg">Place Order</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!--Jumbotron -->
+<br><br>
+<div class="jumbotron p-4 m-2" style="border: black solid 1px; background-color: #a2cffd;" id="About-us">
+  <div class="headings animate__animated text-center" data-aos="fade-down">About us</div><br>
+    <h4 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Hello everyone !!! 🌸</h4>
+    <p class="lead">Welcome to our website "The Preety Bakes" 💙✨ Here you will amaze to see our cakes that have the essence of purity and quality entangled with delightful flavours baked with love ❤️</p>
+    <hr class="my-4">
+    <p class="lead">Please like,share,comment and follow to our social media handles.</p>  
+</div>
+
+<!-- Image-Hover -->
+<div class="container">
+  <br><br><div class="headings animate__animated text-center" data-aos="fade-down">Our Social Media</div><br><br>
+ <div class="row">
+  <div class="col">
+    <div class="hovereffect">
+        <img class="img-responsive" src="caroline-attwood-e2IHEeSKgts-unsplash.jpg" alt="hover-bg">
+        <div class="overlay">
+            <h2 style="color: #077ef6; padding-top: 50px;">Visit <span style="color: #a2cffd;">Here</span></h2>
+            <div class="rotate">
+                <p class="group1">
+                    <a href="https://www.instagram.com/the_preety_bakes?igsh=dG8wNXBlNTM3d2Jy" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@the_preety_bakes?si=QfYYZmLZvl1HxloD" target="_blank">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                </p>
+                    <hr>
+                    <hr>
+                <p class="group2">
+                    <a href="https://pin.it/jMixtlTXB" target="_blank">
+                        <i class="fa fa-pinterest"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=7828316031&text=Hello%21%20I%20want%20more%20information." target="_blank">
+                        <i class="fa fa-whatsapp"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<br><br>
+<!-- Footer -->
+<footer class="pt-4 pb-2" style="background-color: #a2cffd;" id="contact-us">
+    <div class="container">
+      <div class="row">
+
+        <!-- About -->
+        <div class="col-md-3 mb-3">
+          <h5 class="headings animate__animated text-center" data-aos="fade">The Preety Bakes</h5>
+          <p>
+            Pure Veg Cakes <br>
+            Freshly baked every day <br>
+            Made with love and premium ingredients.
+          </p>
+        </div>
+
+        <!-- Social -->
+        <div class="col-md-5 mb-3 custom-quick-links" style="padding-left: 5%">
+          <h5 class="headings animate__animated text-center" data-aos="fade">Social</h5>
+          <ul class="list-unstyled" style="padding-left: 40%">
+            <li>
+              <i class="fa fa-instagram " aria-hidden="true"></i>
+              <a href="https://www.instagram.com/the_preety_bakes?igsh=dG8wNXBlNTM3d2Jy"> Instagram</a>
+            </li>
+            <li>
+              <i class="fa fa-youtube-play custom" aria-hidden="true"></i>
+              <a href="https://youtube.com/@the_preety_bakes?si=QfYYZmLZvl1HxloD"> Youtube</a>
+            </li>
+            <li>
+              <i class="fa fa-pinterest custom" aria-hidden="true"></i>
+              <a href="https://pin.it/jMixtlTXB"> Pinterest</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-4 mb-3" style="padding-left: 10%;">
+          <h5 class="headings animate__animated text-center" data-aos="fade">Contact Us</h5>
+          <address>
+            <a href="https://maps.app.goo.gl/yCu9TPYdpYXXiHFJ8" class="text-dark" target="_blank">📍 Nahar Para, Station Road, Raipur<br></a>
+            <a href="https://api.whatsapp.com/send?phone=7828316031&text=Hello%21%20I%20want%20more%20information." class="text-dark" target="_blank">📞 +91 78283-16031</a><br>
+            📧 20preetim02@gmail.com
+          </address>
+        </div>
+
+      </div>
+
+      <hr class="border-dark">
+
+      <div class="text-center">
+        <p class="mb-0">© 2025 The_Preety_Bakes. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleAddress(show) {
+    const addressField = document.getElementById('addressField');
+    addressField.style.display = show ? 'block' : 'none';
+  }
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          once: true, // animation occurs only once
+          duration: 1000, // animation duration in ms
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('.second-carousel').owlCarousel({
+              loop: true,
+              margin: 10,
+              nav: true,
+              responsive:{
+                  0: { items: 1 },
+                  600: { items:2 },
+                  1000: { items : 5 }
+              }
+          });
+      });
+    </script>
+  
+</body>
+</html>
