@@ -6,7 +6,7 @@ This project is a basic website designed for a home baker. It showcases baked go
 - **Carousel:** Displays a rotating selection of images to highlight products or promotions.
 - **Cards:** Organized sections for products, services, or testimonials, making content visually appealing and easy to browse.
 - **Owl Carousel:** Enhanced carousel functionality for smooth, customizable sliders.
-- **Jumbotron:** Prominent header section to introduce the bakery and catch visitors' attention.
+- **Jumbotron:** Used for the About Us section before Footer, providing a prominent and engaging summary about the baker and their story.
 
 ## Purpose
 The website serves as a simple, attractive online presence for a home baker, allowing them to display their offerings, share contact information, and attract new customers.
